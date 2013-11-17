@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<item    
+    	android:id="@+id/menuPrefs"
+    	android:alphabeticShortcut="p"
+    	android:title="@string/stPrefs" />	
+	<item    
+    	android:id="@+id/menuFake"
+    	android:alphabeticShortcut="f"
+    	android:title="@string/stChangeFakePass" />
+	
+	<item    
+    	android:id="@+id/menuSetQE"
+    	android:alphabeticShortcut="q"
+    	android:title="@string/stsetquickescape" />
+	
+	<item    
+    	android:id="@+id/menuHelp"
+    	android:alphabeticShortcut="h"
+    	android:title="@string/stHelp" />
+	
+</menu>    

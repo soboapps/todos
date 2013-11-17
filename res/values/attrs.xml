@@ -1,0 +1,12 @@
+<resources>
+    <declare-styleable name="PicGallery">
+        <attr name="android:galleryItemBackground" />
+    </declare-styleable>
+    
+    <declare-styleable name="category">
+        <attr name="state_reminder" format="boolean" />
+        <attr name="state_urgent" format="boolean" />
+    </declare-styleable>
+    
+    
+</resources>

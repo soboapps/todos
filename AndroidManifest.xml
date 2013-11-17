@@ -1,0 +1,174 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.soboapps.todos"
+    android:versionCode="10"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"/>
+    
+        <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"> </uses-permission>
+        <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"> </uses-permission>
+	    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:allowBackup="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".TodosOverviewActivity"
+            android:clearTaskOnLaunch="true"
+            android:launchMode="singleTask"
+            android:label="@string/title_activity_todos_overview" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".FakeTodosOverviewActivity"
+            android:finishOnTaskLaunch="true"
+            android:icon="@drawable/todosecureunlock"
+            android:exported="false"
+            android:label="@string/title_fake_activity_todos_overview" >
+            <intent-filter>
+                <action android:name="android.intent.action.FAKEMAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".TodoDetailActivity"
+            android:finishOnTaskLaunch="true"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        
+        <activity
+            android:name=".FakeTodoDetailActivity"
+            android:finishOnTaskLaunch="true"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+        
+        <activity
+            android:name=".Password"
+            android:finishOnTaskLaunch="true"
+            android:icon="@drawable/lock"
+            android:label="@string/stLogin"
+            android:windowSoftInputMode="stateHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.Holo" >
+            <intent-filter>
+                <action android:name="com.soboapps.todos.PASSWORD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+ 
+        <activity
+            android:name=".GalleryActivity"
+            android:finishOnTaskLaunch="true"
+            android:icon="@drawable/unlock"
+            android:exported="false"
+            android:label="@string/stGallery"       
+            android:configChanges="orientation|keyboardHidden" 
+            android:theme="@android:style/Theme.Holo" >
+            <intent-filter>
+                <action android:name="com.soboapps.todos.GALLERYACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+        
+        <activity
+            android:name=".GetToDoImage"
+            android:finishOnTaskLaunch="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.soboapps.todos.GETTODOIMAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> 
+        
+        <provider
+            android:exported="false"
+            android:name=".contentprovider.MyTodoContentProvider"
+            android:authorities="com.soboapps.todos.contentprovider" >
+        </provider>
+        
+        <provider
+            android:exported="false"
+            android:name="com.soboapps.todos.fakecontentprovider.MyFakeTodoContentProvider"
+            android:authorities="com.soboapps.todos.fakecontentprovider" >
+        </provider>
+        
+        <activity
+            android:name=".PassPrefs"
+            android:finishOnTaskLaunch="true"
+            android:label="@string/stPassPrefs"
+            android:exported="false" 
+            android:theme="@android:style/Theme.Holo" >
+            <intent-filter>
+                <action android:name="com.soboapps.todos.PASSPREFS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>    
+        
+        <activity
+            android:name=".FakePassPrefs"
+            android:finishOnTaskLaunch="true"
+            android:label="@string/stFakePassPrefs"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@android:style/Theme.Holo" >
+            <intent-filter>
+                <action android:name="com.soboapps.todos.FAKEPASSPREFS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+		<activity android:name=".SendToDo"
+		    android:excludeFromRecents="true"
+		    android:exported="true">
+			    <intent-filter>
+			        <action android:name="android.intent.action.SEND" />
+			        <category android:name="android.intent.category.DEFAULT" />
+			        <data android:mimeType="image/*" />
+			        <data android:mimeType="video/*" />
+			    </intent-filter>
+		</activity>
+		
+		<activity
+            android:name="com.soboapps.todos.FullScreenViewActivity"
+            android:finishOnTaskLaunch="true"
+            android:label="@string/stGallery"
+            android:theme="@android:style/Theme.Holo">
+			<intent-filter >
+               	<action android:name="android.intent.action.SEND"/>
+               	<category android:name="android.intent.category.DEFAULT"/>
+            	<data android:mimeType="image/*" />
+        	</intent-filter>
+        </activity>
+        
+		<activity
+            android:name="com.soboapps.todos.helper.QuickEscape"
+            android:label="View Image"
+            android:icon="@drawable/qegallery"
+            android:finishOnTaskLaunch="true"         
+            android:theme="@android:style/Theme.Holo">
+        </activity>
+        
+		<activity
+            android:name="com.soboapps.todos.SetQuickEscape"
+            android:finishOnTaskLaunch="true"
+            android:theme="@android:style/Theme.Holo">
+        </activity>
+        
+		<activity
+            android:name="com.soboapps.todos.Help"
+            android:finishOnTaskLaunch="true"
+            android:theme="@android:style/Theme.Holo">
+        </activity>
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res/com.soboapps.todos" >
+
+<item
+    app:state_reminder="true"
+    app:state_urgent="false"
+    android:drawable="@drawable/reminder" />
+
+<item
+    app:state_reminder="false"
+    app:state_urgent="true"
+    android:drawable="@drawable/urgent" />
+</selector>
